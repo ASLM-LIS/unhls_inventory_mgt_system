@@ -40,8 +40,11 @@
 										  	@foreach($asset_mgr as $asset_mgt)
 										    <tr>
 										      <th> {{ $row }} </th>
-										      <td class="text-center">{{ $asset_mgt->Asset_Name}}<br>{{$asset_mgt->Asset_Type}}<br>{{$asset_mgt->Asset_category}}<br>{{$asset_mgt->Serial_number}}<br>{{$asset_mgt->manufacturer}}</td>
+										      <td class="text-left">{{ $asset_mgt->Asset_Name}}<br>{{$asset_mgt->Asset_Type}}<br>{{$asset_mgt->Asset_category}}<br>{{$asset_mgt->Serial_number}}<br>{{$asset_mgt->manufacturer}}</td>
                           <td class="text-center">{{ $asset_mgt->location}}<br>{{$asset_mgt->department}}</td>
+                          <td class="text-left"> {{$asset_mgt->supplier}}<br>{{$asset_mgt->cost}}<br>{{$asset_mgt->funder}}<br>{{$asset_mgt->date_of_delivery}}</td>
+                          <td class="text-left">{{$asset_mgt->installation_date}}<br>{{$asset_mgt->warranty_details}}<br>{{$asset_mgt->useful_life}}<br>{{$asset_mgt->disposal_date}}<br>{{$asset_mgt->method_of_disposal}}</td>
+                          <td class="text-left">{{$asset_mgt->status}}<br>{{$asset_mgt->repair_detials}}<br>{{$asset_mgt->service_details}}<br>{{$asset_mgt->comments}}</td>
 										      <td>
 
 								                {{ Form::open(array('url' => 'asset_mgt/' . $asset_mgt->id, 'class' => 'pull-right form-delete')) }}
