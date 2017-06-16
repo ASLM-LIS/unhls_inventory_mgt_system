@@ -6,59 +6,74 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Moddels\asset_mgt;
+use App\Asset_mgt;
+
+use Illuminate\Support\Facades\Input;
 
 class AssetManagementController extends Controller
 {
 
 public function index(){
-  return view('asset_mgt.index');
+
+  $asset_mgr = Asset_mgt::all();
+  return view('asset_mgt.index', compact('asset_mgr'));
 }
+
 public function store(Request $request)
 {
 
   //validate data
-/**  $validation=$this->validate($request, [
-      'Asset_name' => 'required|unique:users,username,'.$request['username'],
-      'email' => 'required|unique:users,email,'.$request['email'],
-      'password' => 'required|min:3',
-      'role_id' => 'required|numeric',
+ $validation=$this->validate($request, [
+      'Asset_Name' => 'required|unique:users,username,'.$request['username'],
+      'Asset_Type' => 'required|unique:users,email,'.$request['email'],
+      'Asset_Category' => 'required|min:3',
+      'Serial_number' => 'required|numeric',
+      'manufacturer'=>'required',
+      'location'=>'required',
+      'department'=>'required',
+      'date_of_delivery'=>'required',
+      'installation_date'=>'required',
+
   ]);
-  $table->increments('id');
-  $table->string('Asset_Name');
-  $table->string('Asset_Type');
-  $table->string('Asset_Category');
-  $table->string('Serial_number');
-  $table->string('manufacturer');
-  $table->string('location');
-  $table->string('department');
-  $table->string('supplier');
-  $table->Int('cost');
-  $table->string('funder');
-  $table->date('date_of_delivery');
-  $table->date('installation_date');
-  $table->string('warranty_details');
-  $table->string('useful_life');
-  $table->date('disposal_date');
-  $table->string('method_of_disposal');
-  $table->string('status');
-  $table->string('repair_details');
-  $table->string('service_details');
-  $table->string('comments');**/
+  $validator = Validator::make(Input::all(), $rules);
+  if ($validator->fails()) {
+    return Redirect::back()->withErrors($validator)->withInput(Input::all());
+  } else {
+  $asset_mgr = new Asset_mgt;
 
-  $user = new User;
+  $asset_mgr->Asset_Name = $request->Asset_Name;
+  $asset_mgr->Asset_Type = $request->Asset_Type;
+  $asset_mgr->Asset_Category =$request->Asset_Category;
+  $asset_mgr->Serial_number = $request->Serial_number;
+  $asset_mgr->manufacturer = $request->manufacturer;
+  $asset_mgr->location = $request->location;
+  $asset_mgr->department = $request->department;
+  $asset_mgr->supplier = $request->supplier;
+  $asset_mgr->cost = $request->cost;
+  $asset_mgr->funder = $request->funder;
+  $asset_mgr->date_of_delivery = $request->date_of_delivery;
+  $asset_mgr->installation_date = $request->installation_date;
+  $asset_mgr->warranty_details = $request ->warranty_details;
+  $asset_mgr->useful_life = $request->useful_life;
+  $asset_mgr->disposal_date = $request->disposal_date;
+  $asset_mgr->method_of_disposal = $request->method_of_disposal;
 
-  $user->username = $request->username;
-  $user->email = $request->email;
-  $user->password= Hash::make($request->password);
-  $user->role_id = $request->role_id;
-  $user->save();
+  $asset_mgr->save();
     // redirect
     Session::flash('message', 'New user successfully added!');
     Session::flash('alert-type', 'success');
 
-    return Redirect::to('user');
+    return Redirect::to('asset_mgt.index');
+/**
+  try{
+    $asset_mgr->save();
+    return Redirect::to('asset_mgt.index')->with('message', 'New Asset/Equipment successfully added!');
 
+  }catch(QueryException $e){
+    Log::error($e);
+    echo $e->getMessage();}
+    **/
+}
 }
 public function edit(){
 

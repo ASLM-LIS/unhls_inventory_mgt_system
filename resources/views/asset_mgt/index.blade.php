@@ -33,9 +33,28 @@
                           <th>Functional Status</th>
                           <th> Actions</th>
 										      <th ></th>
-
 										    </tr>
 										  </thead>
+                      <tbody>
+                        <?php $row=1; ?>
+										  	@foreach($asset_mgr as $asset_mgt)
+										    <tr>
+										      <th> {{ $row }} </th>
+										      <td class="text-center">{{ $asset_mgt->Asset_Name}}<br>{{$asset_mgt->Asset_Type}}<br>{{$asset_mgt->Asset_category}}<br>{{$asset_mgt->Serial_number}}<br>{{$asset_mgt->manufacturer}}</td>
+                          <td class="text-center">{{ $asset_mgt->location}}<br>{{$asset_mgt->department}}</td>
+										      <td>
+
+								                {{ Form::open(array('url' => 'asset_mgt/' . $asset_mgt->id, 'class' => 'pull-right form-delete')) }}
+								                    {{ Form::hidden('_method', 'DELETE') }}
+								                    {{Form::button('<span class="ion-trash-a"> </span>Delete', array('type' => 'submit', 'class' => 'btn btn-link', 'name' => 'delete_modal'))}}
+								                {{ Form::close() }}
+
+										      	<a href="{{ route('asset_mgt.edit', $asset_mgt->id) }}" class="btn btn-link form-control-static pull-right"><span class="ion-edit"></span> Edit</a>
+											</td>
+										    </tr>
+										    <?php $row++; ?>
+										    @endforeach
+										  </tbody>
                       </table>
                     	</div>
                     </div>
