@@ -52,13 +52,11 @@ class UserController extends Controller
      */
     public function create()
     {
-        $role_list = Role::orderBy('role', 'asc')
-               ->lists('role','id');
+        $role_list = Role::orderBy('role', 'asc')->lists('role','id');
 
         $role_list->prepend("","");
 
-        return view('access.user.create')
-                ->with('role_list',$role_list);
+        return view('access.user.create')->with('role_list',$role_list);
     }
 
     /**

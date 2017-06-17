@@ -295,6 +295,7 @@ class ComposerStaticInit73b9239c4d8be8f99b27cd9bb11283e7
     );
 
     public static $classMap = array (
+        'AssetMgtSeeder' => __DIR__ . '/../..' . '/database/seeds/AssetMgtSeeder.php',
         'CreateAssetMgtsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_15_182541_create_asset_mgts_table.php',
         'CreateGoodsRecievedsTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_21_174153_create_goods_recieveds_table.php',
         'CreateMaulsTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_20_152540_create_mauls_table.php',

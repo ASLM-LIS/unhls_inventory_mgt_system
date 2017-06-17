@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-//use App\Supplychainmgt;
-
-class SupplyChainMgt extends Controller
+class VoucherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +15,7 @@ class SupplyChainMgt extends Controller
      */
     public function index()
     {
-    //  $asset_mgr = Supplychainmgt::all();
-        return view('Supply_Chain_mgt.index');
+        return view('vouchers.index');
     }
 
     /**

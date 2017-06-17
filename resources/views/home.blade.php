@@ -38,7 +38,7 @@
                                   </div>
                                 </a>
 
-                                <a href="#">
+                                <a href="Supply_Chain_mgt">
                                   <div class="panel panel-default col-sm-3">
                                     <span class="icon ion-ios-cart"></span> <br><span class="nav_title">SUPPLY CHAIN MANAGEMENT</span>
                               </span>

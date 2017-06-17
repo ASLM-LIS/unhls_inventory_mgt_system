@@ -1,6 +1,6 @@
 @include('settings.delete_modal')
 
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
 <div class="page_content">

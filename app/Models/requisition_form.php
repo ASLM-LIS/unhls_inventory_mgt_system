@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class requistion extends Model
+class requisition_form extends Model
 {
     protected $table='requistions';
 }

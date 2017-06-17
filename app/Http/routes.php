@@ -27,9 +27,15 @@ Route::resource('maul','MaulController');
 
 Route::resource('goods', 'GoodsRecievedController');
 
-Route::resource('requisition', 'RequisitionsController');
-
 Route::resource('asset_mgt', 'AssetManagementController');
+
+Route::resource('Supply_Chain_mgt','SupplyChainMgt');
+
+Route::resource('vouchers','VoucherController');
+
+Route::resource('requisition_form','RequisitionFormController');
+
+Route::resource('purchase_order_forms','PurchaseOrderController');
 
 Route::resource('supplier', 'SupplierController');
 

@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Models\requisition;
+use App\Models\requisition_form;
 
 use validation;
 
 
-class RequisitionsController extends Controller
+class RequisitionFormController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +20,7 @@ class RequisitionsController extends Controller
      */
     public function index()
     {
-        return view('vouchers.requisition.index');
+        return view('requisition_form.index');
     }
 
     /**
@@ -30,7 +30,7 @@ class RequisitionsController extends Controller
      */
     public function create(Request $request)
     {
-        return view('vouchers.requisition.create');
+        return view('requisition_form.create');
     }
 
     /**
