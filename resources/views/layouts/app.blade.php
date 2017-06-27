@@ -19,17 +19,18 @@
 
     <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
 </head>
-<body id="app-layout" class="side_nav_hover">
+<body id="app-layout" class="side_nav_hover" style="background-color:white">
         @if (Auth::check())
         {
 
         <!-- header -->
-            <header class="navbar navbar-fixed-top" role="banner"}>
+            <header class="navbar navbar-fixed-top" style="background-color:#fffff" role="banner"}>
+
           <div class="container-fluid">
                     <div class="navbar-header">
                         <h4><strong>UNHLS Inventory Management System</strong></h4>
                     </div>
-                <ul class="nav navbar-nav navbar-right" style="color:blue">
+                <ul class="nav navbar-nav navbar-right" style="">
                   <li><a href="{{ url('/home') }}"><span class="ion-home"></span> Home :: </a></li>
                   <li><a href="#"><span class="ion-loop"></span> Refresh :: </a></li>
                   <li><a href="{{ url('/logout') }}"><span class="ion-log-out"></span> Logout :: {{{isset (Auth::user()->username) ? Auth::user()->username : Auth::user()->username}}}</a></li>

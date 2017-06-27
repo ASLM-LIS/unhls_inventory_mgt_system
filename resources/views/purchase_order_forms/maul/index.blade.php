@@ -14,8 +14,8 @@
 										<table class="custom-data-table table table-striped dataTable no-footer display nowrap" id="mauls" data-form="deleteForm">
 
 										<caption>
-											<h4 class="pull-left">MAUL PURCHASE REQUEST FORM</h4>
-											<a type="button" href="{{ url('/maul/create') }}" class="btn btn-sm btn-primary pull-right"><span class="ion-plus">New Request</span></a>
+											<h4 class="pull-left">MILDMAY PURCHASE REQUEST FORM</h4>
+											<a type="button" href="{{ url('/mildmay/create') }}" class="btn btn-sm btn-primary pull-right"><span class="ion-plus">New Request</span></a>
 										</caption>
 
 										  <thead>

@@ -19,7 +19,6 @@
 
     <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
 </head>
-<body id="app-layout" class="side_nav_hover">
         @if (Auth::check())
         {
 
@@ -101,10 +100,6 @@
             $(this).data('placeholder');
         }
     });
-
 </script>
-
-
 @yield('page-js-script')
-</body>
 </html>

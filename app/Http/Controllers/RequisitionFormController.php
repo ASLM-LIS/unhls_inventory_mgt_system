@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Models\requisition_form;
+use App\RequisitionForm;
 
 use validation;
 
@@ -20,7 +20,9 @@ class RequisitionFormController extends Controller
      */
     public function index()
     {
-        return view('requisition_form.index');
+      $requisition_form = RequisitionForm::all();
+      return view('requisition_form.index', compact('requisition_form'));
+
     }
 
     /**
@@ -41,6 +43,7 @@ class RequisitionFormController extends Controller
      */
     public function store(Request $request)
     {
+
       //validate data
       $validation=$this->validate($request, [
           'voucher_no' => 'required|numeric',
@@ -60,7 +63,8 @@ class RequisitionFormController extends Controller
           'stock_card_date' => 'required|max:50',
 
       ]);
-      $requisition = new requisition;
+      $requisition = new RequisitionForm;
+
       $requisition->voucher_no = $request->voucher_no;
       $requisition->unit = $request->unit;
       $requisition->incharge_name = $request->incharge_name;
@@ -76,12 +80,18 @@ class RequisitionFormController extends Controller
       $requisition->title = $request->title;
       $requisition->issue_date = $request->issue_date;
       $requisition->stock_card_date = $request->stock_card_date;
-      $requisition->save();
-      // redirect
-      Session::flash('message', 'Purchase request successfully made!');
-      Session::flash('alert-type', 'success');
-      return Redirect::to('requisition');
 
+      //try{
+        $requisition->save();
+        // redirect
+        Session::flash('message', 'Requisition successfully submitted!');
+        Session::flash('alert-type', 'success');
+        return Redirect::to('requisition_form.index');
+
+      //}catch(QueryException $e){
+        //Log::error($e);
+        //echo $e->getMessage();
+    //  }
     }
 
     /**

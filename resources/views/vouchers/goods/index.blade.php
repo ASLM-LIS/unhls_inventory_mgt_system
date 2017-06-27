@@ -5,12 +5,13 @@
 @section('content')
 <div class="page_content">
                 <div class="container-fluid">
-
                     <div class="row">
                     	<div class="col-md-14">
-
-
-                                    <div class="panel panel-default">
+                        <div <ol class="breadcrumb">
+                          <li><a href="/home">Home</a></li>
+                          <li><a class="active"> Goods Received Note</a></li>
+                            </div>
+                            <div class="panel panel-default">
 										<table class="custom-data-table table table-striped dataTable no-footer display nowrap" id="goods_receiveds" data-form="deleteForm">
 										<caption>
 											<h4 class="pull-left">LIST OF GOODS RECEIVED</h4>

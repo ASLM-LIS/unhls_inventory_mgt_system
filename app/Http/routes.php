@@ -23,20 +23,25 @@ Route::resource('user', 'UserController');
 
 Route::resource('role', 'RoleController');
 
-Route::resource('maul','MaulController');
-
 Route::resource('goods', 'GoodsRecievedController');
 
 Route::resource('asset_mgt', 'AssetManagementController');
 
-Route::resource('Supply_Chain_mgt','SupplyChainMgt');
+Route::resource('Supply_Chain_mgt', 'SupplyChainMgt');
 
-Route::resource('vouchers','VoucherController');
+Route::resource('vouchers', 'VoucherController');
 
-Route::resource('requisition_form','RequisitionFormController');
+Route::resource('requisition_form', 'RequisitionFormController');
 
 Route::resource('purchase_order_forms','PurchaseOrderController');
 
+Route::resource('mildmay', 'MildmayController');
+
 Route::resource('supplier', 'SupplierController');
+
+Route::resource('stock_card', 'StockCardController');
+
+Route::resource('stock_level', 'StockLevelController');
+
 
 //Route::get('maul', 'MaulController@index');
