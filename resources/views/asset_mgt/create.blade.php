@@ -3,13 +3,9 @@
 @section('content')
 <div class="page_content">
   <div class="container-fluid">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css"</link>
     <div class="row">
       <div class="col-md-12 col-md-offset-0">
-        <div <ol class="breadcrumb">
-          <li><a href="{{ url('/home') }}"</a></li>
-            <li><a class="active"> Add New Asset</li>
-          </div>
 
           <div class="panel panel-primary">
             <div class="panel-heading">ASSET MANAGEMENT</div>
@@ -21,7 +17,7 @@
               <fieldset>
 
                 <div class="col-md-6">
-                    <label>Asset Description</label> <br>
+                    <label class="style:font-size:20">Asset Description</label> <br>
                     <label for="" class="required">Asset Name</label>
                   <input class="form-control" name="Asset_name" id="Asset_name" type="text"></input><br>
 
@@ -114,5 +110,4 @@
               </div>
             </div>
           </div>
-          </link>
-          @endsection
+      @endsection

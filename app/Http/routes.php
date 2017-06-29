@@ -43,5 +43,15 @@ Route::resource('stock_card', 'StockCardController');
 
 Route::resource('stock_level', 'StockLevelController');
 
+//#################***************************#############################
+
+//Route::get('importExport', 'MaatwebsiteDemoController@importExport');
+
+Route::get('downloadExcel/{type}', 'DownloadExcelController@downloadExcel');
+
+Route::post('importExcel', 'DownloadExcelController@importExcel');
+
+Route::resource('importExcel','DownloadExcelController');
+
 
 //Route::get('maul', 'MaulController@index');

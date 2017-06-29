@@ -1,13 +1,16 @@
 @include('settings.delete_modal')
-
 @extends('layouts.app')
 @section('content')
 <div>
 <ol class="breadcrumb">
-  <li><a href="{{{URL::route('asset_mgt.create')}}}">{{trans('Register New Equipment')}}
+ <li><a> href="{{{URL::route('asset_mgt.create')}}}" {{trans('Register New Equipment')}} </a></li>
 </ol>
 </div>
 <div>
+  <a href="{{ URL::to('downloadExcel/xls') }}"><button class="btn btn-success">Download as Excel</button></a>
+  <!--<a href="{{ URL::to('downloadExcel/xlsx') }}"><button class="btn btn-success">Download Excel xlsx</button></a>-->
+  <a href="{{ URL::to('downloadExcel/csv') }}"><button class="btn btn-success">Download as CSV</button></a>
+</div>
 <div class="page_content">
                 <div class="container-fluid">
 
@@ -16,7 +19,7 @@
                       <div class="panel panel-default">
 										<table class="custom-data-table table table-striped dataTable no-footer display nowrap" id="asset_mgts" data-form="deleteForm">
 										<caption>
-											<h4 class="pull-left">EQUIPMENT, INFRASTRUCTURE & ASSET MANAGEMENT</h4>
+											<h4 class="pull-left">ITAM REGISTER</h4>
 											<a type="button" href="{{ url('/asset_mgt/create') }}" class="btn btn-sm btn-primary pull-right"><span class="ion-plus">Add New Equipment</span></a>
 										</caption>
 
@@ -75,6 +78,7 @@
                     	</div>
                     </div>
                 </div>
+</div>
 </div>
 </div>
 @endsection

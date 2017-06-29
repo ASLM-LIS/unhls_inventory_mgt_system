@@ -14,6 +14,10 @@ use Validator;
 
 use Session;
 
+use DB;
+
+use Excel;
+
 class AssetManagementController extends Controller
 {
 
@@ -68,9 +72,9 @@ public function store(Request $request)
   try{
   $asset_mgr->save();
     // redirect
-  Session::flash('message', 'New user successfully added!');
+  Session::flash('message', 'New Asset successfully added!');
   Session::flash('alert-type', 'success');
-  return Redirect::to('asset_mgt');
+  return Redirect::to('asset_mgt.index');
 
   }catch(QueryException $e){
     Log::error($e);
@@ -90,4 +94,6 @@ public function show(){
 public function create(){
   return view('asset_mgt.create');
 }
+
+
 }
