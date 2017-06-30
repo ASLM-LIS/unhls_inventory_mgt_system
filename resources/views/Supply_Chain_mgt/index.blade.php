@@ -5,7 +5,6 @@
 
   <ol class="breadcrumbs">
 
-
   </ol>
   <div class="container-fluid">
     <div class="row">
@@ -19,18 +18,6 @@
         <div class="col-md-12">
 
           <ul>
-            <!--<a href="maul">
-            <div class="panel panel-default col-sm-3">
-            <span class="ion-icon ion-document"></span> <br><span class="nav_title">Maul</span>
-            <br>
-          </div>
-          <div>
-          <a href="goods">
-          <div class="panel panel-default col-sm-3">
-          <span class="icon ion-ios-cart"></span> <br><span class="nav_title">Goods Received Note</span>
-        </span>
-      </div>
-    </a>-->
 
     <a href="purchase_order_forms">
       <div class="panel panel-default col-sm-3">
@@ -64,17 +51,6 @@
 
 </div>
 
-</div>
-
-</div>
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 @endsection

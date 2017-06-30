@@ -57,31 +57,58 @@
 
         @if (Auth::check())
         {
-            <nav id="side_nav">
+            <nav class="style:color:yellow" id="side_nav">
             <ul>
                 <li>
                     <a href="{{ url('home') }}"><span class="ion-speedometer"></span> <span class="nav_title">Dashboard</span></a>
                 </li>
 
-                <li>
-                    <a href="{{ url('#') }}"><span class="ion-plus-circled"></span> <span class="nav_title">Capture new stock</span></a>
-                </li>
-
-                <li class="nav_trigger">
+                    <li class="nav_trigger">
                     <a href="#">
-                        <span class="icon ion-ios-paper-outline"></span>
-                        <span class="nav_title">Purchase Order Forms</span>
+                        <span class="con ion-gear-b"></span>
+                        <span class="nav_title">Asset Management</span>
                     </a>
                     <div class="sub_panel" style="left: -220px;">
                         <div class="side_inner">
                             <ul>
-                                <li><a href="maul"><span class="side_icon ion-ios7-star-outline"></span> MAUL</a></li>
-                                <li><a href="#"><span class="side_icon ion-ios7-calendar-outline"></span>Mildmay</a></li>
-                                <li><a href="#"><span class="side_icon ion-ios7-calendar-outline"></span>NMS</a></li>
+                                <a href="{{{URL::route('ictasset.index')}}}"><span class="side_icon ion-ios7-star-outline"></span>ICT</a>
+                                <li><a href="#"><span class="side_icon ion-ios7-calendar-outline"></span>Laboratory</a></li>
+                                <li><a href="#"><span class="side_icon ion-ios7-calendar-outline"></span>Transport & Fleet</a></li>
                             </ul>
                         </div>
                     </div>
                 </li>
+                <li class="nav_trigger">
+                  <a href="#">
+                    <span class="ion-ios-cart"></span>
+                    <span class="nav_title">Supply Chain Mgt</span>
+                  </a>
+                  <div class="sub_panel" style="left: -220px;">
+                    <div class="side_inner">
+                      <ul>
+                        <li><a href="requisition"><span class="side_icon ion-ios7-calendar-outline"></span> Ordering</a> </li>
+                        <li><a href="goods"><span class="side_icon ion-ios7-calendar-outline"></span> Receiving</a> </li>
+                        <li><a href="#"><span class="side_icon ion-ios7-calendar-outline"></span> Vouchers & Forms</a> </li>
+                      </ul>
+                    </div>
+                  </div>
+                  </li>
+
+                  <li class="nav_trigger">
+                    <a href="#">
+                      <span class="icon ion-navicon-round"></span>
+                      <span class="nav_title">In house requisitions</span>
+                    </a>
+                    <div class="sub_panel" style="left: -220px;">
+                      <div class="side_inner">
+                        <ul>
+                          <li><a href="requisition_form"><span class="side_icon ion-ios7-calendar-outline"></span> Ordering</a> </li>
+                          <li><a href="goods"><span class="side_icon ion-ios7-calendar-outline"></span> Receiving</a> </li>
+                          <li><a href="#"><span class="side_icon ion-ios7-calendar-outline"></span> Vouchers & Forms</a> </li>
+                        </ul>
+                      </div>
+                    </div>
+                    </li>
 
                 <li class="nav_trigger">
                     <a href="#">
@@ -101,21 +128,7 @@
                     </div>
                 </li>
 
-                <li class="nav_trigger">
-                  <a href="#">
-                    <span class="ion-clipboard"></span>
-                    <span class="nav_title">Vouchers & Forms</span>
-                  </a>
-                  <div class="sub_panel" style="left: -220px;">
-                    <div class="side_inner">
-                      <ul>
-                        <li><a href="requisition"><span class="side_icon ion-ios7-calendar-outline"></span> Stores Requisition & Issue Voucher</a> </li>
-                        <li><a href="goods"><span class="side_icon ion-ios7-calendar-outline"></span> Goods Received Note</a> </li>
-                        <li><a href="#"><span class="side_icon ion-ios7-calendar-outline"></span> Stock Card</a> </li>
-                      </ul>
-                    </div>
-                  </div>
-                  </li>
+
 
                   <li class="nav_trigger">
                     <a href="#">

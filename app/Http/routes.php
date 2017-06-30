@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::resource('/home', 'HomeController@index');
 
 Route::resource('user', 'UserController');
 
@@ -53,5 +53,6 @@ Route::post('importExcel', 'DownloadExcelController@importExcel');
 
 Route::resource('importExcel','DownloadExcelController');
 
+Route::resource('ictasset','ictAssetController');
 
 //Route::get('maul', 'MaulController@index');

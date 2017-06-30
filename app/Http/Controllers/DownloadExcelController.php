@@ -19,9 +19,9 @@ class DownloadExcelController extends Controller
 {
 
 	public function index(){
-
 	  $asset_mgr = Asset_mgt::all();
-	  return view('importExport', compact('asset_mgr'));
+		return view('asset_mgt.index', compact('asset_mgr'));
+
 	}
 
 	public function importExport()
@@ -31,10 +31,24 @@ class DownloadExcelController extends Controller
 
 	}
 
+public function destroy($id)
+	{
+		# code...
+	}
+
 	public function downloadExcel($type)
 	{
-		$data = Asset_mgt::get()->toArray();
-		return Excel::create('UNHLS Asset Itam', function($excel) use ($data)
+		$data = Asset_mgt::get( ['Asset_Name',
+		'Asset_Type',
+		'Asset_Category',
+		'Serial_number',
+		'manufacturer',
+		'location',
+		'department',
+		'date_of_delivery',
+		'installation_date'])->toArray();
+
+		return Excel::create('ICT Equipment Itam', function($excel) use ($data)
 		{
 			$excel->sheet('mySheet', function($sheet) use ($data)
 	        {
