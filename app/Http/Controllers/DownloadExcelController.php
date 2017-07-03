@@ -23,19 +23,6 @@ class DownloadExcelController extends Controller
 		return view('asset_mgt.index', compact('asset_mgr'));
 
 	}
-
-	public function importExport()
-	{
-
-		return view('importExport');
-
-	}
-
-public function destroy($id)
-	{
-		# code...
-	}
-
 	public function downloadExcel($type)
 	{
 		$data = Asset_mgt::get( ['Asset_Name',
@@ -46,7 +33,8 @@ public function destroy($id)
 		'location',
 		'department',
 		'date_of_delivery',
-		'installation_date'])->toArray();
+		'installation_date',
+		'funder'])->toArray();
 
 		return Excel::create('ICT Equipment Itam', function($excel) use ($data)
 		{
@@ -55,42 +43,6 @@ public function destroy($id)
 				$sheet->fromArray($data);
 	        });
 		})->download($type);
-	}
-
-	public function store()
-
-	{
-
-		if(Input::hasFile('import_file')){
-
-			$path = Input::file('import_file')->getRealPath();
-
-			$data = Excel::load($path, function($reader) {
-
-			})->get();
-
-			if(!empty($data) && $data->count()){
-
-				foreach ($data as $key => $value) {
-
-					$insert[] = ['title' => $value->title, 'description' => $value->description];
-
-				}
-
-				if(!empty($insert)){
-
-					DB::table('items')->insert($insert);
-
-					dd('Insert Record successfully.');
-
-				}
-
-			}
-
-		}
-
-		return back();
-
 	}
 
 }
